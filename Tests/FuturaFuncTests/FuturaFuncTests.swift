@@ -2,15 +2,29 @@ import XCTest
 @testable import FuturaFunc
 
 class FuturaFuncTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(FuturaFunc().text, "Hello, World!")
+    
+    func testForwardApplication() {
+        let result = "TEST"
+            |> String.lowercased^
+        XCTAssert(result == "test")
     }
-
-
+    
+    func testChainedForwardApplication() {
+        let result = "TEST"
+            |> String.lowercased^
+            |> String.uppercased^
+        XCTAssert(result == "TEST")
+    }
+    
+    func testForwardComposition() {
+        let result = "TEST"
+            |> String.lowercased^ >>> String.uppercased^
+        XCTAssert(result == "TEST")
+    }
+    
     static var allTests = [
-        ("testExample", testExample),
-    ]
+        ("testForwardApplication", testForwardApplication),
+        ("testChainedForwardApplication", testChainedForwardApplication),
+        ("testForwardComposition", testForwardComposition),
+        ]
 }
