@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "FuturaAsync",
+        "repositoryURL": "https://github.com/kaqu/FuturaAsync.git",
+        "state": {
+          "branch": null,
+          "revision": "f8f277ee49d6e8532dedf7c40203621ccc1d4802",
+          "version": "0.3.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

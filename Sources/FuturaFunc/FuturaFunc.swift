@@ -1,18 +1,8 @@
 
-precedencegroup ForwardApplicationPrecedence {
-    higherThan: AssignmentPrecedence
-    associativity: left
-}
-
 infix operator |> : ForwardApplicationPrecedence
 
 public func |><A, B>(a: A, f: (A)->(B)) -> B {
     return f(a)
-}
-
-precedencegroup ForwardCompositionPrecedence {
-    higherThan: ForwardApplicationPrecedence
-    associativity: left
 }
 
 infix operator >>> : ForwardCompositionPrecedence
