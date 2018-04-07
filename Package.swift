@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:4.1
 
 import PackageDescription
 
@@ -10,7 +10,7 @@ let package = Package(
             targets: ["FuturaFunc"]),
     ],
     dependencies: [
-         .package(url: "https://github.com/kaqu/FuturaAsync.git", from: "0.3.0"),
+         .package(url: "https://github.com/kaqu/FuturaAsync.git", from: "0.9.0"),
     ],
     targets: [
         .target(

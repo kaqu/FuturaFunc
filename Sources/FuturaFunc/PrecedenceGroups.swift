@@ -1,22 +1,17 @@
 import Foundation
 
 precedencegroup ForwardApplicationPrecedence {
-    higherThan: AssignmentPrecedence//AsyncForwardApplicationPrecedence
-    associativity: left
-}
-
-precedencegroup SyncForwardApplicationPrecedence {
-    higherThan: ForwardApplicationPrecedence
+    higherThan: AssignmentPrecedence
     associativity: left
 }
 
 precedencegroup AsyncForwardApplicationPrecedence {
-    higherThan: SyncForwardApplicationPrecedence//ForwardCompositionPrecedence
+    higherThan: ForwardApplicationPrecedence
     associativity: left
 }
 
 precedencegroup FutureAlternativePrecedence {
-    higherThan: AsyncForwardApplicationPrecedence//SyncForwardApplicationPrecedence
+    higherThan: AsyncForwardApplicationPrecedence
     associativity: left
 }
 
