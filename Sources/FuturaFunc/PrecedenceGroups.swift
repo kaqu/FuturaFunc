@@ -1,21 +1,36 @@
-import Foundation
-
 precedencegroup ForwardApplicationPrecedence {
     higherThan: AssignmentPrecedence
     associativity: left
 }
 
-precedencegroup AsyncForwardApplicationPrecedence {
+precedencegroup LensGetterPrecedence {
     higherThan: ForwardApplicationPrecedence
     associativity: left
 }
 
-precedencegroup FutureAlternativePrecedence {
-    higherThan: AsyncForwardApplicationPrecedence
+precedencegroup LensSetterPrecedence {
+    higherThan: LensGetterPrecedence
     associativity: left
 }
 
 precedencegroup ForwardCompositionPrecedence {
-    higherThan: FutureAlternativePrecedence
+    higherThan: LensSetterPrecedence
     associativity: left
 }
+
+precedencegroup ForwardTypeCompositionPrecedence {
+    higherThan: ForwardCompositionPrecedence
+    associativity: left
+}
+
+precedencegroup BackwardApplicationPrecedence {
+    higherThan: ForwardTypeCompositionPrecedence
+    associativity: right
+}
+
+precedencegroup BackwardCompositionPrecedence {
+    higherThan: BackwardApplicationPrecedence
+    associativity: right
+}
+
+
